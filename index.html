@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>flowpoint</title>
+  <script type="text/javascript" src="js/requestNextAnimationFrame.js"></script>
+  <script type="text/javascript" src="js/flowpoint.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/flowpoint.css">
+</head>
+<body bgcolor="#444">
+  <canvas id="flowpoint" width="2000" height="800" style="border: 1px solid #dedede; margin: 50px auto; width: 1000px; height: 400px;"></canvas>
+  <script type="text/javascript">
+    var data = {
+      title: '需求评估',
+      img: 'img/activity.png',
+      align: 'left',
+      x: 120,
+      y: 200,
+      children: [
+        {
+          title: '签订协议',
+          img: 'img/brush.png',
+          align: 'top',
+          x: 160,
+          y: 60
+        },
+        {
+          title: 'UI规划',
+          img: 'img/activity.png',
+          x: 240,
+          y: 150,
+          children: [
+            {
+              title: '视觉设计',
+              img: 'img/activity.png',
+              align: 'top',
+              x: 350,
+              y: 60,
+              children: [
+                {
+                  title: '前端制作',
+                  img: 'img/activity.png',
+                  x: 450,
+                  y: 220,
+                  children: [
+                    {
+                      title: '技术开发',
+                      img: 'img/activity.png',
+                      align: 'center',
+                      x: 600,
+                      y: 80,
+                      children: [
+                        {
+                          title: '程序测试',
+                          img: 'img/activity.png',
+                          align: 'right',
+                          x: 780,
+                          y: 150,
+                          children: [
+                            {
+                              title: '完成交付',
+                              img: 'img/activity.png',
+                              x: 600,
+                              y: 310,
+                              children: [
+                                {
+                                  title: '产品上线',
+                                  img: 'img/activity.png',
+                                  x: 900,
+                                  y: 260,
+                                  children: [
+                                    {
+                                      title: '售后服务',
+                                      img: 'img/activity.png',
+                                      align: 'top',
+                                      x: 940,
+                                      y: 120
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: '前期沟通',
+          img: 'img/editor.png',
+          x: 180,
+          y: 350
+        }
+      ]
+    };
+    var flowPoint = ycbrmsn.getFlowPoint({
+      id: 'flowpoint',
+      radius: 20,
+      imgWidth: 24,
+      color: 'white',
+      bgColor: 'white',
+      fontSize: 14,
+      // fontFamily: '宋体',
+      ratio: 2,
+      data: data
+    });
+    flowPoint.init();
+    flowPoint.animate();
+  </script>
+</body>
+</html>
